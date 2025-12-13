@@ -15,7 +15,7 @@ Cross-platform mobile application for MediVault Platform built with **Expo** and
 
 ## Tech Stack
 - **Expo SDK 54**
-- React Native 0.76
+- React Native 0.76.3
 - TypeScript
 - Redux Toolkit (State Management)
 - React Navigation (Navigation)
@@ -161,22 +161,40 @@ Using Expo's managed workflow:
 
 ## Troubleshooting
 
+**"TurboModuleRegistry" or "PlatformConstants could not be found"**
+1. Delete node_modules: `rm -rf node_modules`
+2. Clear npm cache: `npm cache clean --force`
+3. Reinstall dependencies: `npm install`
+4. Clear Expo cache: `expo start -c`
+5. If still failing, ensure React Native version matches Expo SDK (0.76.3 for SDK 54)
+
 **"Unable to resolve module"**
 - Run `npm install` again
 - Clear cache: `expo start -c`
+- Delete node_modules and reinstall
 
 **"Network request failed"**
 - Check API_BASE_URL configuration
 - Ensure backend is running
 - Use correct IP address for physical devices
 
+**"Asset resolution failed"**
+- Ensure all assets exist in the `assets/` folder
+- Restart Metro bundler: `expo start -c`
+
 **Camera not working**
 - Grant camera permissions when prompted
 - Check `app.json` for camera plugin configuration
 
+**App won't start in Expo Go**
+- Ensure Expo Go version matches SDK version (SDK 54)
+- Restart Expo server: `expo start -c`
+- Update Expo Go app from App Store/Play Store
+
 ## Dependencies
 See `package.json` for full list of dependencies including:
-- expo (~50.0.0)
+- expo (~54.0.0)
+- react-native (0.76.3 - exact version for SDK 54 compatibility)
 - @reduxjs/toolkit
 - react-navigation
 - react-native-paper
