@@ -49,21 +49,35 @@ src/
 # Install dependencies
 npm install
 
-# Install iOS pods (macOS only)
+# For iOS (macOS only) - Initialize iOS project first
+npx react-native init-ios
+
+# Then install pods
 cd ios && pod install && cd ..
 ```
 
 ### Running the App
+
+**Important Notes:**
+- iOS development requires macOS and Xcode
+- On Windows/Linux, use Android development only
+- The `react-native.config.js` file configures platform-specific settings
+
 ```bash
 # Start Metro bundler
 npm start
 
-# Run on Android
+# Run on Android (Windows/Linux/macOS)
 npm run android
 
-# Run on iOS
+# Run on iOS (macOS only)
 npm run ios
 ```
+
+**Troubleshooting:**
+- If you get "Cannot read properties of null (reading 'automaticPodsInstallation')", ensure you're on macOS for iOS development
+- On Windows, use `npm run android` instead
+- Make sure Android Studio and Android SDK are properly installed for Android development
 
 ## API Configuration
 Update the API_BASE_URL in `src/constants/index.ts`:
