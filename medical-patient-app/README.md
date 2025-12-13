@@ -14,8 +14,8 @@ Cross-platform mobile application for MediVault Platform built with **Expo** and
 - 🔔 Push notifications
 
 ## Tech Stack
-- **Expo SDK 50**
-- React Native 0.73
+- **Expo SDK 54**
+- React Native 0.76
 - TypeScript
 - Redux Toolkit (State Management)
 - React Navigation (Navigation)
