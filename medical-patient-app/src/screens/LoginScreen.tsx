@@ -27,7 +27,7 @@ const LoginScreen = ({ navigation }: any) => {
       } else {
         await dispatch(register({ email, password, name, phone, role: 'PATIENT' }) as any).unwrap();
       }
-      navigation.replace('RoleSelection');
+      navigation.replace('Home');
     } catch (err: any) {
       Alert.alert('Error', err || 'Authentication failed');
     }

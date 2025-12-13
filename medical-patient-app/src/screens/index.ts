@@ -3,10 +3,10 @@ export { default as SplashScreen } from './SplashScreen';
 export { default as LoginScreen } from './LoginScreen';
 export { default as HomeScreen } from './HomeScreen';
 export { default as PatientListScreen } from './PatientListScreen';
+export { default as AddPatientScreen } from './AddPatientScreen';
 
 // Placeholder exports for other screens
 export const RoleSelectionScreen = () => null;
-export const AddPatientScreen = () => null;
 export const EditPatientScreen = () => null;
 export const ScanPrescriptionScreen = () => null;
 export const ImagePreviewScreen = () => null;

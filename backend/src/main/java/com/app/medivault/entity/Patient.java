@@ -66,6 +66,6 @@ public class Patient {
 
     public int getAge() {
         if (dob == null) return 0;
-        return LocalDate.now().getYear() - dob.getYear();
+        return java.time.Period.between(dob, LocalDate.now()).getYears();
     }
 }
