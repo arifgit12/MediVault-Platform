@@ -2,6 +2,7 @@ package com.app.medivault.entity;
 
 public enum AnalysisStatus {
 
+    PENDING,           // Initial state
     UPLOADED,          // Image uploaded successfully
     QUEUED,            // Waiting for OCR / analysis
     PROCESSING,        // OCR or AI analysis in progress
