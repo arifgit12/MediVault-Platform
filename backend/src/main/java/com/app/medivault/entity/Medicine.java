@@ -1,14 +1,13 @@
 package com.app.medivault.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(name = "medicines")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,13 +15,17 @@ import lombok.Setter;
 public class Medicine {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
     private String dosage;
     private String frequency;
     private String duration;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "prescription_id")
+    private Prescription prescription;
 
     public Medicine(String name, String dosage, String frequency, String duration) {
         this.name = name;

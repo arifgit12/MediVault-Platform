@@ -1,9 +1,9 @@
-
 import { configureStore } from '@reduxjs/toolkit';
-import offlineReducer from './slices/offlineSlice';
+import rootReducer from './rootReducer';
 
 export const store = configureStore({
-  reducer: {
-    offline: offlineReducer
-  }
+  reducer: rootReducer,
 });
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
